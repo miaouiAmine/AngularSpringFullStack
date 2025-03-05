@@ -1,0 +1,43 @@
+
+
+
+<nav>
+  <div>
+<button (click)="getAllCodes()" class="btn btn-success">Tous Les Codes</button>
+
+
+<button (click)="ReloadPage()" class="btn btn-primary">Reload Page</button>
+  </div>
+</nav>
+<hr>
+
+<table class="table" border="2">
+  <thead >
+  <tr>
+    <th scope="col">Id Code</th>
+    <th scope="col">Code Text</th>
+    <th scope="col">Valeur de Code</th>
+    <th scope="col">Date debut</th>
+    <th scope="col">Date Fin</th>
+    <th scope="col">Nombre d utilisation</th>
+    <th scope="col">Nombre d utilisation Max</th>
+    <th scope="col">Reduction par utilisation</th>
+    <th scope="col">Supprimer</th>
+  </tr>
+  </thead>
+  <tbody >
+  <tr *ngFor="let Code of Code">
+    <th>{{Code.idCode}}</th>
+    <td>{{Code.codeText}}</td>
+    <td>{{Code.codeValue}}</td>
+    <td>{{Code.dateDebut}}</td>
+    <td>{{Code.dateFin}}</td>
+    <td>{{Code.nbrUtilisation}}</td>
+    <td>{{Code.nbrUtilisationMax}}</td>
+    <td>{{Code.reductionParUtilisation}}</td>
+    <td><button type="button" class="btn btn-danger" (click)="deleteCode(Code.idCode)">Supprimer</button></td>
+  </tr>
+  </tbody>
+</table>
+<hr>
+

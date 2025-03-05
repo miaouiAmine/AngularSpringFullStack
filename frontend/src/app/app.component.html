@@ -1,0 +1,43 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Smart Shop</a>
+    </div>
+    <ul class="nav navbar-nav" routerLinkActive="active">
+      <li class="nav-item"><a class="nav-link" routerLink="home">Home</a></li>
+      <li *ngIf="authority === 'user'" class="nav-item">
+        <a class="nav-link" routerLink="user">Menu Utilisateur</a>
+      <li class="nav-item>"><a *ngIf="authority === 'user'" class="nav-link" routerLink="/utiliserCode">utiliser code</a></li>
+      <li class="nav-item>"><a *ngIf="authority === 'user'" class="nav-link" routerLink="/creePortM">Cree PortMonnais</a></li>
+      <li class="nav-item>"><a *ngIf="authority === 'user'" class="nav-link" routerLink="/achterCoupon">Achter Coupon</a></li>
+      <li class="nav-item>"><a *ngIf="authority === 'user'" class="nav-link" routerLink="/Tous Les Achats">Tous Les Achats</a></li>
+
+
+
+
+      <li *ngIf="authority === 'admin'" class="nav-item">
+
+      <li class="nav-item>"><a *ngIf="authority === 'admin'" class="nav-link" routerLink="admin">Menu Admin</a></li>
+      <li class="nav-item>"><a *ngIf="authority === 'admin'" class="nav-link" routerLink="Creation du code">Creation du code</a></li>
+      <li class="nav-item>"><a *ngIf="authority === 'admin'" class="nav-link" routerLink="AllCodes">Tous Les Codes</a></li>
+      <li class="nav-item>"><a *ngIf="authority === 'admin'" class="nav-link" routerLink="UtilisationDesCodes">Utilisations</a></li>
+      <li class="nav-item>"><a *ngIf="authority === 'admin'" class="nav-link" routerLink="AjouterCoupon">Ajouter Coupon</a></li>
+      <li class="nav-item>"><a *ngIf="authority === 'admin'" class="nav-link" routerLink="getAllCoupons">Tous Les Coupons</a></li>
+      <li class="nav-item>"><a *ngIf="authority === 'admin'" class="nav-link" routerLink="gestionUtilisateurs">gestion des Utilisateurs</a></li>
+      <li class="nav-item>"><a *ngIf="authority === 'admin'" class="nav-link" routerLink="Achats">Achats</a></li>
+
+
+      <li *ngIf="!authority" class="nav-item">
+        <a class="nav-link" routerLink="auth/login">Login</a>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+<div class="container">
+
+  <router-outlet></router-outlet>
+
+</div>
+
+

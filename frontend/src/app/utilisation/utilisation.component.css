@@ -1,0 +1,17 @@
+.column {
+  float: left;
+  width: 33.33%;
+}
+
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+.vl {
+  border-left: 5px solid green;
+  height: 0px;
+}

@@ -1,0 +1,70 @@
+
+
+<button class="btn btn-link" (click)="Var='A'" ><img class="img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/System-users.svg/1024px-System-users.svg.png"></button>
+<button class="btn btn-link" (click)="Var='B'"><img class="img" src="https://previews.123rf.com/images/rrraven/rrraven1411/rrraven141100100/33530518-porte-monnaie-ic%C3%B4ne.jpg"></button>
+<div *ngIf="Var=='B'">
+<hr>
+<nav>
+  <div>
+    <button (click)="getAllPort()" class="btn btn-success">Tous Les PortMonnais</button>
+
+
+    <button (click)="ReloadPage()" class="btn btn-primary">Reload Page</button>
+    <strong > A:Active  B:Bloquer </strong>
+  </div>
+</nav>
+<hr>
+
+<table class="table" border="2">
+  <thead >
+  <tr>
+    <th scope="col">Id PortMonnais</th>
+    <th scope="col">Id Utilisateur</th>
+    <th scope="col">Solde</th>
+    <th scope="col">Etat  </th>
+  </tr>
+  </thead>
+  <tbody >
+  <tr *ngFor="let Ports of Ports">
+    <th>{{Ports.idPortMonnais}}</th>
+    <td>{{Ports.idUser}}</td>
+    <td>{{Ports.solde}}</td>
+    <td>
+      <strong>{{Ports.etat}}</strong>
+<br>
+      <button class="btn btn-success" (click)="Activer(Ports.idUser)">Activer</button>
+
+      <button class="btn btn-danger" (click)="Bloquer(Ports.idUser)">Bloquer</button>
+
+    </td>
+  </tr>
+  </tbody>
+</table>
+  </div>
+
+
+<div *ngIf="Var=='A'">
+<button (click)="getAllUsers()">Tous Les Utilisateurs</button>
+
+<table class="table" border="2">
+  <thead >
+  <tr>
+    <th scope="col">ID User</th>
+    <th scope="col">Nom</th>
+    <th scope="col">Prenom</th>
+    <th scope="col">@mail</th>
+    <th scope="col">Mot De Pass</th>
+  </tr>
+  </thead>
+  <tbody >
+  <tr *ngFor="let User of Users">
+
+    <th >{{User.id}}</th>
+    <td >{{User.name}}</td>
+    <td >{{User.username}}</td>
+    <td >{{User.email}}</td>
+    <td>{{User.password}}</td>
+  </tr>
+  </tbody>
+</table>
+</div>

@@ -1,0 +1,108 @@
+
+
+
+<button (click)="Var='A'"><img src="https://cdn2.iconfinder.com/data/icons/man-1/100/man-men-21-512.png" class="img"></button>
+<button (click)="Var='B'"><img src="https://static.vecteezy.com/system/resources/previews/000/554/951/non_2x/price-tag-vector-icon.jpg" class="img"></button>
+<button (click)="Var='C'"><img src="https://img.icons8.com/ios/452/purchase-order.png" class="img"></button>
+<hr>
+<div *ngIf="Var=='A'">
+
+  <h1>Historiqe d'achat du Client d' ID  :</h1>
+  <input type="number" [(ngModel)]="idClient" min="1">
+  <button (click)="afficherAchatClient(idClient)" >Les Achats du Client</button>
+<hr>
+  <table class="table" border="2">
+    <thead >
+    <tr>
+      <th scope="col">ID Achat</th>
+      <th scope="col">Date Achat</th>
+      <th scope="col">ID Utilisateur</th>
+      <th scope="col">ID Coupon</th>
+      <th scope="col">Prix Coupon</th>
+      <th scope="col">Solde Avant</th>
+      <th scope="col">Solde Apres</th>
+
+    </tr>
+    </thead>
+    <tbody >
+    <tr *ngFor="let b of AchCli">
+      <th>{{b.idAchat}}</th>
+      <td>{{b.dateAchat}}</td>
+      <td>{{b.idUser}}</td>
+      <td>{{b.idCoupon}}</td>
+      <td>{{b.prixCoupon}}</td>
+      <td>{{b.soldeAvant}}</td>
+      <td>{{b.soldeApres}}</td>
+
+    </tr>
+    </tbody>
+  </table>
+
+
+</div>
+
+<div *ngIf="Var=='B'">
+
+  <h1>Achats du coupon d' ID  :</h1>
+  <input type="number" [(ngModel)]="idCoupon" min="1">
+  <button (click)="afficherAchatCoupon(idCoupon)" >Les Achats du Coupon</button>
+  <hr>
+  <table class="table" border="2">
+    <thead >
+    <tr>
+      <th scope="col">ID Achat</th>
+      <th scope="col">Date Achat</th>
+      <th scope="col">ID Utilisateur</th>
+      <th scope="col">ID Coupon</th>
+      <th scope="col">Prix Coupon</th>
+      <th scope="col">Solde Avant</th>
+      <th scope="col">Solde Apres</th>
+    </tr>
+    </thead>
+    <tbody >
+    <tr *ngFor="let z of AchCoup">
+      <th>{{z.idAchat}}</th>
+      <td>{{z.dateAchat}}</td>
+      <td>{{z.idUser}}</td>
+      <td>{{z.idCoupon}}</td>
+      <td>{{z.prixCoupon}}</td>
+      <td>{{z.soldeAvant}}</td>
+      <td>{{z.soldeApres}}</td>
+
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div *ngIf="Var=='C'">
+  <h1>Tous Les Achats</h1> <button (click)="TousAchats()" >Afficher </button>
+  <hr>
+  <table class="table" border="2">
+    <thead >
+    <tr>
+      <th scope="col">ID Achat</th>
+      <th scope="col">Date Achat</th>
+      <th scope="col">ID Utilisateur</th>
+      <th scope="col">ID Coupon</th>
+      <th scope="col">Prix Coupon</th>
+      <th scope="col">Solde Avant</th>
+      <th scope="col">Solde Apres</th>
+    </tr>
+    </thead>
+    <tbody >
+    <tr *ngFor="let a of AchAll">
+      <th>{{a.idAchat}}</th>
+      <td>{{a.dateAchat}}</td>
+      <td>{{a.idUser}}</td>
+      <td>{{a.idCoupon}}</td>
+      <td>{{a.prixCoupon}}</td>
+      <td>{{a.soldeAvant}}</td>
+      <td>{{a.soldeApres}}</td>
+    </tr>
+    </tbody>
+  </table>
+
+
+</div>
+

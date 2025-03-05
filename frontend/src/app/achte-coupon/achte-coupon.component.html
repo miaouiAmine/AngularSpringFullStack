@@ -1,0 +1,32 @@
+
+
+<h1>List Des Coupon</h1>
+<hr>
+<button class="btn btn-primary" (click)="AllCoupons()">Afficher Les Coupon</button>
+<button class="btn btn-success" (click)="getSolde()">Solde </button>
+<table class="table" border="0">
+  <thead >
+  <tr>
+
+    <th scope="col">Prix Coupon</th>
+    <th scope="col">Quantitee en stock</th>
+    <th scope="col">Description</th>
+    <th scope="col">socite</th>
+    <th scope="col">Image</th>
+    <th scope="col">Supprimer</th>
+  </tr>
+  </thead>
+  <tbody >
+  <tr *ngFor="let coupon of coupon">
+    <td>{{coupon.prixCoupon}}</td>
+    <td>{{coupon.quantite}}</td>
+    <td>{{coupon.descCoupon}}</td>
+    <td>{{coupon.socCoupon}}</td>
+    <td><img [src]="coupon.imageSource" class="img"></td>
+    <td><button type="button" class="btn btn-danger" (click)="AchterCoupon(coupon.idCoupon)">Achter Coupon</button></td>
+
+  </tr>
+  </tbody>
+</table>
+<hr>
+

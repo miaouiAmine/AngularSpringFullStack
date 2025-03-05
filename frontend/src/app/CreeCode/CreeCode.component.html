@@ -1,0 +1,28 @@
+<h1 xmlns="http://www.w3.org/1999/html">Parametrage du code</h1>
+<hr>
+
+
+<table border="2" cellspacing="5"  >
+
+  <td>Code Text</td>
+  <td><input [(ngModel)]="codeText" [disabled]="true" ></td>
+  <td><button (click)="generateCode()" class="btn btn-warning">Generer un code</button></td>
+   <tr></tr>
+  <td>Valeur du code</td><td><input type="number"[(ngModel)]="codeValue" min="0"></td>
+  <tr></tr>
+  <td>Nombre d utilisation</td><td><input [(ngModel)]="nbrUtilisation" type="number" min="0"></td>
+  <tr></tr>
+  <td>Reduction Par Utilisation</td><td><input [(ngModel)]="reductionParUtilisation" type="number" min="0"></td>
+  <tr></tr>
+  <td>Date debut</td><td><input [(ngModel)]="dateDebut" type="date"></td>
+  <tr></tr>
+  <td>Date Fin</td><td><input [(ngModel)]="dateFin" type="date"></td>
+
+</table>
+
+<hr>
+    <button type="submit" (click)="testValid()" class="btn btn-danger"> Cree Le Code</button>
+
+
+
+

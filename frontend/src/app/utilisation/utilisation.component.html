@@ -1,0 +1,161 @@
+<div class="row">
+  <div class="column">
+
+    <legend>Utilisations d un Code</legend>
+
+    <div class="vl"></div>
+    <input type="number" [(ngModel)]="idCode"  min="1">
+    <button (click)="Var='A'" >Afficher</button>
+    <hr>
+  </div>
+  <div class="column">
+
+    <legend>Historique d un utilisateur</legend>
+    <div class="vl"></div>
+    <input type="number" [(ngModel)]="idUser" min="1" >
+    <button (click)="Var='B'">Afficher</button>
+    <hr>
+  </div>
+  <div class="column">
+
+    <legend>Tous Les Utilisation</legend>
+    <div class="vl"></div>
+    <button (click)="Var='C'">Tous Les Utilisation</button>
+    <hr>
+
+  </div>
+</div>
+
+
+
+<div>
+
+<div *ngIf="Var=='A'">
+
+  <h2>Utilisation De Code D'ID = {{idCode}}  <button class="btn btn-success"
+  (click)="getUtilCode()">Recherche</button>
+    <button class="btn btn-warning" (click)="relP()">refresh</button></h2>
+
+
+  <table class="table" border="2">
+    <thead >
+    <tr>
+      <th scope="col">ID Utilisation</th>
+      <th scope="col">ID Code</th>
+      <th scope="col">ID User</th>
+      <th scope="col">Code Text</th>
+      <th scope="col">Date Utilisation</th>
+      <th scope="col">Valeur Ajouter</th>
+      <th scope="col">Solde Avant</th>
+      <th scope="col">Solde Apres</th>
+    </tr>
+    </thead>
+    <tbody >
+    <tr *ngFor="let UtilC of UtilC">
+      <th>{{UtilC.idUtilisation}}</th>
+      <td>{{UtilC.idCode}}</td>
+      <td>{{UtilC.idUser}}</td>
+      <td>{{UtilC.codeText}}</td>
+      <td>{{UtilC.dateUtilisation}}</td>
+      <td>{{UtilC.valeurAjouter}}</td>
+      <td>{{UtilC.soldeAvant}}</td>
+      <td>{{UtilC.soldeApres}}</td>
+    </tr>
+    </tbody>
+  </table>
+
+
+
+</div>
+
+
+  <div *ngIf="Var=='B'">
+
+    <h2>Utilisation D'Utilisateur D'Id = {{idUser}}  <button class="btn btn-success"
+    (click)="getUtilUser()">Recherche</button>
+      <button class="btn btn-warning" (click)="relP()">refresh</button></h2>
+
+
+    <table class="table" border="2">
+      <thead >
+      <tr>
+        <th scope="col">ID Utilisation</th>
+        <th scope="col">ID User</th>
+        <th scope="col">ID Code</th>
+        <th scope="col">Code Text</th>
+        <th scope="col">Date Utilisation</th>
+        <th scope="col">Valeur Ajouter</th>
+        <th scope="col">Solde Avant</th>
+        <th scope="col">Solde Apres</th>
+      </tr>
+      </thead>
+      <tbody >
+      <tr *ngFor="let UtilU of UtilU">
+        <th>{{UtilU.idUtilisation}}</th>
+        <td>{{UtilU.idUser}}</td>
+        <td>{{UtilU.idCode}}</td>
+        <td>{{UtilU.codeText}}</td>
+        <td>{{UtilU.dateUtilisation}}</td>
+        <td>{{UtilU.valeurAjouter}}</td>
+        <td>{{UtilU.soldeAvant}}</td>
+        <td>{{UtilU.soldeApres}}</td>
+      </tr>
+      </tbody>
+    </table>
+
+
+
+
+
+
+
+
+  </div>
+
+
+  <div *ngIf="Var=='C'">
+    <h2>Tous les Codes   <button class="btn btn-success"
+    (click)="getAllUtil()">Recherche</button>
+    <button class="btn btn-warning" (click)="relP()">refresh</button></h2>
+
+    <table class="table" border="2">
+      <thead >
+      <tr>
+        <th scope="col">ID Utilisation</th>
+        <th scope="col">ID User</th>
+        <th scope="col">ID Code</th>
+        <th scope="col">Code Text</th>
+        <th scope="col">Date Utilisation</th>
+        <th scope="col">Valeur Ajouter</th>
+        <th scope="col">Solde Avant</th>
+        <th scope="col">Solde Apres</th>
+      </tr>
+      </thead>
+      <tbody >
+      <tr *ngFor="let Util of Util">
+        <th>{{Util.idUtilisation}}</th>
+        <td>{{Util.idUser}}</td>
+        <td>{{Util.idCode}}</td>
+        <td>{{Util.codeText}}</td>
+        <td>{{Util.dateUtilisation}}</td>
+        <td>{{Util.valeurAjouter}}</td>
+        <td>{{Util.soldeAvant}}</td>
+        <td>{{Util.soldeApres}}</td>
+      </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
